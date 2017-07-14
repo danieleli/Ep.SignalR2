@@ -14,6 +14,7 @@ namespace SignalRChat
         static void Main()
         {
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
             MainForm = new WinFormsServer();
             Application.Run(MainForm);
