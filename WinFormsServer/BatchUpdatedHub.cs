@@ -7,6 +7,7 @@ namespace SignalRChat
     {
         public void BatchUpdated(int id, string status)
         {
+            
             Program.MainForm.WriteToConsole("Batch updated: " + id + " - " + status);
             Clients.All.batchUpdated(id, status);
         }
@@ -15,10 +16,10 @@ namespace SignalRChat
             Program.MainForm.WriteToConsole("Client connected: " + Context.ConnectionId);
             return base.OnConnected();
         }
-        public override Task OnDisconnected()
+        public override Task OnDisconnected(bool stopCalled)
         {
             Program.MainForm.WriteToConsole("Client disconnected: " + Context.ConnectionId);
-            return base.OnDisconnected();
+            return base.OnDisconnected(stopCalled);
         }
     }
 }

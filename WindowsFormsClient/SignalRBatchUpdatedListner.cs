@@ -8,11 +8,6 @@ using System.Threading.Tasks;
 
 namespace WinFormsClient
 {
-    public interface ISignalRConfig
-    {
-        string GetSignalRUri();
-    }
-
 
 
     public class SignalRBatchUpdatedListner : BatchUpdatedListner, IDisposable
@@ -35,22 +30,6 @@ namespace WinFormsClient
             IsConnected = false;
         }
 
-        private void SetupProxy()
-        {
-            _hubProxy = _connection.CreateHubProxy(HUB_NAME);
-            _hubProxy.On<int, string>(EVENT_NAME, (id, status) =>
-                base.UpdateBatch(id, status)
-            );
-        }
-
-        public void InitializeConnection()
-        {
-            var serverURI = _config.GetSignalRUri();
-            _connection = new HubConnection(serverURI);
-            _connection.Closed += Connection_Closed;
-            _disposed = false;
-        }
-
         public async void ConnectAsync()
         {
             InitializeConnection();
@@ -67,6 +46,34 @@ namespace WinFormsClient
                 throw;
             }
         }
+
+        private void InitializeConnection()
+        {
+            var serverURI = _config.GetSignalRUri();
+            if (_connection != null)
+            {
+                if (_connection.State != ConnectionState.Disconnected)
+                {
+                    _connection.Stop();
+                }
+                _connection.Dispose();
+            }
+
+            
+            _connection = new HubConnection(serverURI);
+            _connection.Closed += Connection_Closed;
+            _disposed = false;
+        }
+
+        private void SetupProxy()
+        {
+            _hubProxy = _connection.CreateHubProxy(HUB_NAME);
+            _hubProxy.On<int, string>(EVENT_NAME, (id, status) =>
+                base.UpdateBatch(id, status)
+            );
+        }
+
+        
 
         protected virtual void OnConnectionChanged(bool isConnected)
         {

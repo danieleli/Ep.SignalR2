@@ -111,13 +111,13 @@ namespace WPFServer
 
             return base.OnConnected();
         }
-        public override Task OnDisconnected()
+        public override Task OnDisconnected(bool stopCalled)
         {
             //Use Application.Current.Dispatcher to access UI thread from outside the MainWindow class
             Application.Current.Dispatcher.Invoke(() => 
                 ((MainWindow)Application.Current.MainWindow).WriteToConsole("Client disconnected: " + Context.ConnectionId));
 
-            return base.OnDisconnected();
+            return base.OnDisconnected(stopCalled);
         }
 
     }

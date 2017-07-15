@@ -31,6 +31,7 @@ namespace SignalRChat
         {
             WriteToConsole("Starting server...");
             ButtonStart.Enabled = false;
+
             Task.Run(() => StartServer());
         }
 

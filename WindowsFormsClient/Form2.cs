@@ -18,7 +18,7 @@ namespace WinFormsClient
         internal Form2()
         {
             InitializeComponent();
-            _listner = new SignalRBatchUpdatedListner();
+            _listner = new SignalRBatchUpdatedListner(null);
             _listner.BatchUpdated += Listner_BatchUpdated;
             _listner.ConnectionChanged += Listner_ConnectionChanged;
             _listner.ConnectAsync();
