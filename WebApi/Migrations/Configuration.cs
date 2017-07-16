@@ -1,31 +1,33 @@
+using System.Collections.Generic;
+using WebApi.Models;
+
 namespace WebApi.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using WebApi.Models.Dal;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WebApi.Models.Dal.PayrollContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<PayrollContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(WebApi.Models.Dal.PayrollContext context)
+        protected override void Seed(PayrollContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            Console.WriteLine("start seed");
+            var jobs = new List<PayrollBatchJob>
+            {
+                new PayrollBatchJob { Description = "seed batch 1", Status = "New"}
+            };
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.PayrollBatchJobs.AddOrUpdate(x=>x.PayrollBatchJobId, jobs.ToArray());
+            context.SaveChanges();
+
+            Console.WriteLine("ends seed");
         }
     }
 }

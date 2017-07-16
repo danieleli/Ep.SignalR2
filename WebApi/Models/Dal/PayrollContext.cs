@@ -8,7 +8,10 @@ namespace WebApi.Models.Dal
 {
     public class PayrollContext : DbContext
     {
-        public PayrollContext() : base("PayrollContext"){}
+        public PayrollContext() : base(
+            "Data Source=(localdb)\\ProjectsV13;Initial Catalog=Payroll.Database;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False")
+        {
+        }
 
         public IDbSet<PayrollBatchJob> PayrollBatchJobs { get; set; }
         public IDbSet<PayrollBatch> PayrollBatches { get; set; }

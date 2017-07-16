@@ -185,6 +185,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PayrollBatchController.cs" />
+    <Compile Include="Controllers\PayrollBatchesController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,7 +196,6 @@
       <DependentUpon>201707162030293_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Dal\SchoolInitializer.cs" />
     <Compile Include="Models\PayrollBatch.cs" />
     <Compile Include="Models\PayrollBatchJob.cs" />
     <Compile Include="Models\Dal\PayrollContext.cs" />
