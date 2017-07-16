@@ -27,7 +27,7 @@ namespace WebApi.Controllers
         // GET: api/PayrollBatches
         public IEnumerable<PayrollBatch> GetPayrollBatches()
         {
-            return db.PayrollBatches.ToList();
+            return _batches.ToList();
         }
 
         // GET: api/PayrollBatches/5

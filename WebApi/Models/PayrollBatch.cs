@@ -5,6 +5,10 @@ namespace WebApi.Models
 {
     public class PayrollBatch
     {
+        public PayrollBatch()
+        {
+            Timecards = new List<Timecard>();
+        }
         public int PayrollBatchId { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }
