@@ -13,20 +13,16 @@ namespace SignalRChat
     /// The hub used in this server is a simple echo service, and has the same 
     /// functionality as the other hubs in the SignalR Getting Started tutorials.
     /// </summary>
-    public partial class WinFormsServer : Form
+    public partial class MainForm : Form
     {
         private IDisposable _signalR;
-        const string ServerURI = "http://localhost:8080";
+        const string SERVER_URI = "http://localhost:8080";
 
-        internal WinFormsServer()
+        internal MainForm()
         {
             InitializeComponent();
         }
-
-        /// <summary>
-        /// Calls the StartServer method with Task.Run to not
-        /// block the UI thread. 
-        /// </summary>
+        
         private void ButtonStart_Click(object sender, EventArgs e)
         {
             WriteToConsole("Starting server...");
@@ -34,42 +30,30 @@ namespace SignalRChat
 
             Task.Run(() => StartServer());
         }
-
-        /// <summary>
-        /// Stops the server and closes the form. Restart functionality omitted
-        /// for clarity.
-        /// </summary>
+        
         private void ButtonStop_Click(object sender, EventArgs e)
         {
             //SignalR will be disposed in the FormClosing event
             Close();
         }
-
-        /// <summary>
-        /// Starts the server and checks for error thrown when another server is already 
-        /// running. This method is called asynchronously from Button_Start.
-        /// </summary>
+        
         private void StartServer()
         {
             try
             {
-                _signalR = WebApp.Start(ServerURI);
+                _signalR = WebApp.Start(SERVER_URI);
             }
             catch (TargetInvocationException)
             {
-                WriteToConsole("Server failed to start. A server is already running on " + ServerURI);
+                WriteToConsole("Server failed to start. A server is already running on " + SERVER_URI);
                 //Re-enable button to let user try to start server again
                 this.Invoke((Action)(() => ButtonStart.Enabled = true));
                 return;
             }
             this.Invoke((Action)(() => ButtonStop.Enabled = true));
-            WriteToConsole("Server started at " + ServerURI);
+            WriteToConsole("Server started at " + SERVER_URI);
         }
-        /// <summary>
-        /// This method adds a line to the RichTextBoxConsole control, using Invoke if used
-        /// from a SignalR hub thread rather than the UI thread.
-        /// </summary>
-        /// <param name="message"></param>
+
         internal void WriteToConsole(String message)
         {
             if (RichTextBoxConsole.InvokeRequired)

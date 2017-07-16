@@ -1,6 +1,6 @@
 ﻿namespace SignalRChat
 {
-    partial class WinFormsServer
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@
             this.Controls.Add(this.ButtonStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "WinFormsServer";
+            this.Name = "MainForm";
             this.Text = "WinForms SignalR Server";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WinFormsServer_FormClosing);
             this.ResumeLayout(false);

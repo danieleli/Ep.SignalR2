@@ -5,7 +5,7 @@ namespace SignalRChat
 {
     public static class Program
     {
-        internal static WinFormsServer MainForm { get; set; }
+        internal static MainForm MainForm { get; set; }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +16,7 @@ namespace SignalRChat
             Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-            MainForm = new WinFormsServer();
+            MainForm = new MainForm();
             Application.Run(MainForm);
         }
     }
