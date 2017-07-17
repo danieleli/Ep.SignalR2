@@ -32,7 +32,7 @@ namespace WebApi.Controllers
 
         // GET: api/PayrollBatches/5
         [ResponseType(typeof(PayrollBatch))]
-        public async Task<IHttpActionResult> GetPayrollBatch(int id)
+        public async Task<IHttpActionResult> GetPayrollBatch(int id)  
         {
             DbSet set = (DbSet) db.PayrollBatches;
             PayrollBatch payrollBatch = await _batches.FindAsync(id);
