@@ -82,7 +82,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BatchUpdatedHub.cs" />
+    <Compile Include="PayrollHub.cs" />
     <Compile Include="Models\Batch.cs" />
     <Compile Include="MyHub.cs" />
     <Compile Include="Startup.cs" />

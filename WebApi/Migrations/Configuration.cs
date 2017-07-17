@@ -19,12 +19,15 @@ namespace WebApi.Migrations
         protected override void Seed(PayrollContext context)
         {
             Console.WriteLine("start seed");
-            var jobs = new List<PayrollBatchJob>
+            var jobs = new List<PayrollBatch>
             {
-                new PayrollBatchJob { Description = "seed batch 1", Status = "New"}
+                new PayrollBatch {PayrollBatchId = 1, BatchDesc = "seed batch 1", Status = "New"},
+                new PayrollBatch {PayrollBatchId = 2, BatchDesc = "seed batch 2", Status = "New"},
+                new PayrollBatch {PayrollBatchId = 3, BatchDesc = "seed batch 3", Status = "Done"},
+                new PayrollBatch {PayrollBatchId = 4, BatchDesc = "seed batch 4", Status = "New"},
             };
 
-            context.PayrollBatchJobs.AddOrUpdate(x=>x.PayrollBatchJobId, jobs.ToArray());
+            context.PayrollBatches.AddOrUpdate(x=>x.PayrollBatchId, jobs.ToArray());
             context.SaveChanges();
 
             Console.WriteLine("ends seed");

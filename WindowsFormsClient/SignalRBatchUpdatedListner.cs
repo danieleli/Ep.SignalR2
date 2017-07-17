@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsClient
 {
-
-
+    
     public class SignalRBatchUpdatedListner : BatchUpdatedListner, IDisposable
     {
         private const string HUB_NAME = "BatchUpdatedHub";

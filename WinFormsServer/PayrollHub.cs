@@ -3,11 +3,12 @@ using System.Threading.Tasks;
 
 namespace SignalRChat
 {
-    public class BatchUpdatedHub : Hub
+    public class PayrollHub : Hub
     {
+        public PayrollHub(){}
+
         public void BatchUpdated(int id, string status)
         {
-            
             Program.MainForm.WriteToConsole("Batch updated: " + id + " - " + status);
             Clients.All.batchUpdated(id, status);
         }

@@ -9,7 +9,6 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
-using Newtonsoft.Json;
 using WebApi.Models;
 using WebApi.Models.Dal;
 
@@ -18,24 +17,18 @@ namespace WebApi.Controllers
     public class PayrollBatchesController : ApiController
     {
         private PayrollContext db = new PayrollContext();
-        private readonly DbSet<PayrollBatch> _batches;
 
-        public PayrollBatchesController()
+        // GET: api/PayrollBatches1
+        public IList<PayrollBatch> GetPayrollBatches()
         {
-            _batches = (DbSet<PayrollBatch>)db.PayrollBatches;
-        }
-        // GET: api/PayrollBatches
-        public IEnumerable<PayrollBatch> GetPayrollBatches()
-        {
-            return _batches.ToList();
+            return db.PayrollBatches.ToList();
         }
 
-        // GET: api/PayrollBatches/5
+        // GET: api/PayrollBatches1/5
         [ResponseType(typeof(PayrollBatch))]
-        public async Task<IHttpActionResult> GetPayrollBatch(int id)  
+        public async Task<IHttpActionResult> GetPayrollBatch(int id)
         {
-            DbSet set = (DbSet) db.PayrollBatches;
-            PayrollBatch payrollBatch = await _batches.FindAsync(id);
+            PayrollBatch payrollBatch = await db.PayrollBatches.FindAsync(id);
             if (payrollBatch == null)
             {
                 return NotFound();
@@ -44,7 +37,7 @@ namespace WebApi.Controllers
             return Ok(payrollBatch);
         }
 
-        // PUT: api/PayrollBatches/5
+        // PUT: api/PayrollBatches1/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPayrollBatch(int id, PayrollBatch payrollBatch)
         {
@@ -79,7 +72,7 @@ namespace WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/PayrollBatches
+        // POST: api/PayrollBatches1
         [ResponseType(typeof(PayrollBatch))]
         public async Task<IHttpActionResult> PostPayrollBatch(PayrollBatch payrollBatch)
         {
@@ -94,11 +87,11 @@ namespace WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = payrollBatch.PayrollBatchId }, payrollBatch);
         }
 
-        // DELETE: api/PayrollBatches/5
+        // DELETE: api/PayrollBatches1/5
         [ResponseType(typeof(PayrollBatch))]
         public async Task<IHttpActionResult> DeletePayrollBatch(int id)
         {
-            PayrollBatch payrollBatch = await _batches.FindAsync(id);
+            PayrollBatch payrollBatch = await db.PayrollBatches.FindAsync(id);
             if (payrollBatch == null)
             {
                 return NotFound();

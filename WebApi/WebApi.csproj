@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201707162030293_initial.Designer.cs">
       <DependentUpon>201707162030293_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707171646391_modelUpdate.cs" />
+    <Compile Include="Migrations\201707171646391_modelUpdate.Designer.cs">
+      <DependentUpon>201707171646391_modelUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PayrollBatch.cs" />
     <Compile Include="Models\PayrollBatchJob.cs" />
@@ -282,6 +286,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707162030293_initial.resx">
       <DependentUpon>201707162030293_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707171646391_modelUpdate.resx">
+      <DependentUpon>201707171646391_modelUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

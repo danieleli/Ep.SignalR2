@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebApi.Models
+namespace PayrollClient.Models
 {
     public class PayrollBatch
     {

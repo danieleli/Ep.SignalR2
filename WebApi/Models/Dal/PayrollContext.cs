@@ -13,9 +13,9 @@ namespace WebApi.Models.Dal
         {
         }
 
-        public IDbSet<PayrollBatchJob> PayrollBatchJobs { get; set; }
-        public IDbSet<PayrollBatch> PayrollBatches { get; set; }
-        public IDbSet<Timecard> Timecards { get; set; }
+        public DbSet<PayrollBatchJob> PayrollBatchJobs { get; set; }
+        public DbSet<PayrollBatch> PayrollBatches { get; set; }
+        public DbSet<Timecard> Timecards { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
