@@ -16,17 +16,25 @@ namespace WebApi.Controllers
     public class ProcessPayrollController : ApiController
     {
         private PayrollContext db = new PayrollContext();
-        
+
+        // GET: api/ProcessPayroll/Next
+        public PayrollBatch GetNext()
+        {
+            var batch =  db.PayrollBatches.FirstOrDefault(b => b.Status == "Submitted");
+            return batch;
+        }
+
+
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutPayrollBatch(int id)
+        public async Task<IHttpActionResult> UpdateStatus(int id, string status)
         {
             var payrollBatch = await db.PayrollBatches.FindAsync(id);
             if (payrollBatch == null)
             {
                 return NotFound();
             }
-            payrollBatch.Status = "Submitted";
-            
+            payrollBatch.Status = status;
+
             try
             {
                 await db.SaveChangesAsync();
@@ -46,6 +54,7 @@ namespace WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        
         private bool PayrollBatchExists(int id)
         {
             return db.PayrollBatches.Count(e => e.PayrollBatchId == id) > 0;

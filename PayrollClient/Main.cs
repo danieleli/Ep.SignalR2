@@ -11,44 +11,26 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PayrollClient.DataServices;
 using PayrollClient.Models;
 
 namespace PayrollClient
 {
     public partial class Main : Form
     {
-        private HttpClient _client;
+        private readonly PayrollBatchService _batchService;
 
         public Main()
         {
             InitializeComponent();
-            _client = new HttpClient()
-            {
-                BaseAddress = new Uri(@"http://localhost:1765/")
-            };
-            _client.DefaultRequestHeaders.Accept.Clear();
-            _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
+            _batchService = new PayrollBatchService();
         }
 
         private void ButtonGetBatches_Click(object sender, EventArgs e)
         {
-            var batches = GetBatches();
+            var batches = _batchService.GetBatches();
             payrollBatchBindingSource.DataSource = batches;
         }
-
-        private IList<PayrollBatch> GetBatches()
-        {
-            var response = _client.GetAsync("api/PayrollBatches").Result;
-            if (response.IsSuccessStatusCode)
-            {
-                var batches = response.Content.ReadAsAsync<List<PayrollBatch>>().Result;
-                return batches;
-            }
-
-            return null;
-        }
-
 
         private void ButtonSubmitBatch_Click(object sender, EventArgs e)
         {
@@ -59,21 +41,11 @@ namespace PayrollClient
                 var batch = (PayrollBatch)row.DataBoundItem;
                 batch.Status = "Submitting...";
                 this.Refresh();
-                SubmitBatch(batch.PayrollBatchId);
+                _batchService.SubmitBatch(batch.PayrollBatchId);
                 Thread.Sleep(1000);
                 batch.Status = "Submitted";
                 SetRowForeColor(row, Color.Black);
             }
-        }
-
-        private void SubmitBatch(int id)
-        {
-            var response = _client.PutAsJsonAsync($"api/ProcessPayroll/{id}",id).Result;
-            if (response.IsSuccessStatusCode)
-            { 
-                return ;
-            }
-            throw new ApplicationException(response.ReasonPhrase);
         }
 
         private static void SetRowForeColor(DataGridViewRow row, Color color)

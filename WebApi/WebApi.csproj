@@ -199,9 +199,12 @@
     <Compile Include="Migrations\201707171646391_modelUpdate.Designer.cs">
       <DependentUpon>201707171646391_modelUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707172154200_removeBatchJobs.cs" />
+    <Compile Include="Migrations\201707172154200_removeBatchJobs.Designer.cs">
+      <DependentUpon>201707172154200_removeBatchJobs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\PayrollBatch.cs" />
-    <Compile Include="Models\PayrollBatchJob.cs" />
     <Compile Include="Models\Dal\PayrollContext.cs" />
     <Compile Include="Models\Timecard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -290,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707171646391_modelUpdate.resx">
       <DependentUpon>201707171646391_modelUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707172154200_removeBatchJobs.resx">
+      <DependentUpon>201707172154200_removeBatchJobs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

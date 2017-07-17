@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollClient", "PayrollClient\PayrollClient.csproj", "{B55F0A42-093E-433B-B6BB-3E03D1AF180D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollBatchProcessor", "PayrollBatchProcessor\PayrollBatchProcessor.csproj", "{43A91226-9BA6-4765-962A-86CB1AEDE514}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
