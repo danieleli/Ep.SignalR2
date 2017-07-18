@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BatchProcessor")]
+[assembly: AssemblyTitle("WinFormsServer._Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BatchProcessor")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("EP")]
+[assembly: AssemblyProduct("WinFormsServer._Test")]
+[assembly: AssemblyCopyright("Copyright © EP 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("77e6dc1f-857f-444e-9016-713a4a783fd2")]
+[assembly: Guid("1668778b-417f-44af-91a4-b2199daccfaf")]
 
 // Version information for an assembly consists of the following four values:
 //

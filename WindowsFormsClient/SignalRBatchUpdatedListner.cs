@@ -11,7 +11,7 @@ namespace WinFormsClient
     
     public class SignalRBatchUpdatedListner : BatchUpdatedListner, IDisposable
     {
-        private const string HUB_NAME = "BatchUpdatedHub";
+        private const string HUB_NAME = "PayrollHub";
         private const string EVENT_NAME = "BatchUpdated";
 
         private bool _disposed = false;
@@ -48,7 +48,7 @@ namespace WinFormsClient
 
         private void InitializeConnection()
         {
-            var serverURI = _config.GetSignalRUri();
+            var serverUri = _config.GetSignalRUri();
             if (_connection != null)
             {
                 if (_connection.State != ConnectionState.Disconnected)
@@ -59,7 +59,7 @@ namespace WinFormsClient
             }
 
             
-            _connection = new HubConnection(serverURI);
+            _connection = new HubConnection(serverUri);
             _connection.Closed += Connection_Closed;
             _disposed = false;
         }
@@ -71,9 +71,7 @@ namespace WinFormsClient
                 base.UpdateBatch(id, status)
             );
         }
-
         
-
         protected virtual void OnConnectionChanged(bool isConnected)
         {
             IsConnected = isConnected;

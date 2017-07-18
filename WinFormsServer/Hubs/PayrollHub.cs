@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNet.SignalR;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNet.SignalR;
 
-namespace SignalRChat
+namespace SignalRChat.Hubs
 {
     public class PayrollHub : Hub
     {

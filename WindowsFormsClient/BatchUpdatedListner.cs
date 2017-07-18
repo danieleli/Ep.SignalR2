@@ -4,11 +4,17 @@ namespace WinFormsClient
 {
     public delegate void BatchUpdatedEventHandler(object sender, BatchUpdatedEventArgs e);
 
+    public class BatchUpdatedEventArgs : EventArgs
+    {
+        public int BatchId { get; set; }
+        public string BatchStatus { get; set; }
+    }
+
     public class BatchUpdatedListner
     {
         public event BatchUpdatedEventHandler BatchUpdated;
         
-        public void UpdateBatch(int batchId, string status)
+        protected void UpdateBatch(int batchId, string status)
         {
             var args = new BatchUpdatedEventArgs()
             {
@@ -21,16 +27,11 @@ namespace WinFormsClient
 
         protected virtual void OnBatchUpdated(BatchUpdatedEventArgs e)
         {
-            if (BatchUpdated != null)
-                BatchUpdated(this, e);
+            BatchUpdated?.Invoke(this, e);
         }
 
     }
 
 
-    public class BatchUpdatedEventArgs : EventArgs
-    {
-        public int BatchId { get; set; }
-        public string BatchStatus { get; set; }
-    }
+
 }
