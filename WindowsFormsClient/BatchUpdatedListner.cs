@@ -14,7 +14,7 @@ namespace WinFormsClient
     {
         public event BatchUpdatedEventHandler BatchUpdated;
         
-        protected void UpdateBatch(int batchId, string status)
+        public void UpdateBatch(int batchId, string status)
         {
             var args = new BatchUpdatedEventArgs()
             {

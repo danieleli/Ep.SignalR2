@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using log4net;
@@ -22,39 +20,44 @@ namespace WinFormsServer._Test
             _log.Debug("test");
         }
 
-        [Test]
+        [Test(Description = "Manual test.  Requires manually running WinFormsServer.exe")]
         public void BatchUpdatedListner()
         {
             var conn = new HubConnection(SERVER_URI);
             var proxy = conn.CreateHubProxy(HUB_NAME);
             var eventName = "BatchUpdated";
+            var eventFired = false;
             
             proxy.On<int, string>(eventName, (id, status) =>
             {
-                Console.WriteLine($"ID: {id}, Status: {status}");
+                _log.Debug($"Proxy.On listner delegate. EventName: {eventName}, ID: {id}, Status: {status}");
+                eventFired = true;
             });
            
             var task = conn.Start();
+            var counter = 0;
             while (!task.IsCompleted)
             {
+                counter++;
                 Thread.Sleep(100);
-                Console.WriteLine("Sleep..");
+                _log.Debug($"waiting for connection.start...{counter}");
             }
-
+            
+            _log.Debug($"proxy.Invoke({HUB_NAME}, 1, somestatus)");
             proxy.Invoke(eventName, 1, "somestatus");
-            proxy.Invoke(eventName, 2, "other");
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
                 Thread.Sleep(10);
                 Console.WriteLine($"wait {i}");
+                if (eventFired) return;
             }
+
+            Assert.Fail("Event not fired");
             
         }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(PayrollHubFixture));
 
     }
-
-
 }
