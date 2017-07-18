@@ -11,7 +11,7 @@ namespace SignalRChat
     {
         public void Configuration(IAppBuilder app)
         {
-            _log.Debug("Configure");
+            _log.Debug("Configuring SignalR");
             app.UseCors(CorsOptions.AllowAll);
             app.MapSignalR();
         }

@@ -3,6 +3,7 @@ using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net;
 
 namespace SignalRChat
 {
@@ -63,6 +64,7 @@ namespace SignalRChat
                 ));
                 return;
             }
+            _log.Info(message);
             RichTextBoxConsole.AppendText(message + Environment.NewLine);
         }
 
@@ -74,5 +76,7 @@ namespace SignalRChat
                 _signalR.Dispose();
             }
         }
+
+        private static readonly ILog _log = LogManager.GetLogger(typeof(MainForm));
     }
 }
