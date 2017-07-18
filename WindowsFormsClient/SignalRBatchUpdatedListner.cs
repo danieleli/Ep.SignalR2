@@ -57,10 +57,9 @@ namespace WinFormsClient
                 }
                 _connection.Dispose();
             }
-
             
             _connection = new HubConnection(serverUri);
-            _connection.Closed += Connection_Closed;
+            _connection.Closed += () => OnConnectionChanged(false); 
             _disposed = false;
         }
 
@@ -74,14 +73,11 @@ namespace WinFormsClient
         
         protected virtual void OnConnectionChanged(bool isConnected)
         {
-            IsConnected = isConnected;
-            if (ConnectionChanged != null)
-                ConnectionChanged(this, new EventArgs());
-        }
-
-        private void Connection_Closed()
-        {
-            OnConnectionChanged(false);
+            if (IsConnected != isConnected)
+            {
+                IsConnected = isConnected;
+                ConnectionChanged?.Invoke(this, new EventArgs());
+            }
         }
 
         public void Dispose()
@@ -103,6 +99,25 @@ namespace WinFormsClient
                     finally
                     {
                         _connection.Dispose();
+                    }
+                }
+
+                if (this.ConnectionChanged != null)
+                {
+                    try
+                    {
+
+                        var list = this.ConnectionChanged.GetInvocationList();
+                        foreach (var del in list)
+                        {
+                            this.ConnectionChanged -= (EventHandler) del;
+                        }
+                    }
+
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                        throw;
                     }
                 }
 
