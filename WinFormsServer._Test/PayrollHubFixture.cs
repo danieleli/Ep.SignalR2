@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using log4net;
 using Microsoft.AspNet.SignalR.Client;
 using NUnit.Framework;
 
@@ -14,6 +15,12 @@ namespace WinFormsServer._Test
     {
         private const string SERVER_URI = "http://localhost:8080";
         private const string HUB_NAME = "PayrollHub";
+
+        [Test]
+        public void Logging()
+        {
+            _log.Debug("test");
+        }
 
         [Test]
         public void BatchUpdatedListner()
@@ -44,7 +51,9 @@ namespace WinFormsServer._Test
             }
             
         }
-        
+
+        private static readonly ILog _log = LogManager.GetLogger(typeof(PayrollHubFixture));
+
     }
 
 
