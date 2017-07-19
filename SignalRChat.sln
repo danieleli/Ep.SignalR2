@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsServer", "WinFormsServer\WinFormsServer.csproj", "{2368DFE4-48D1-482D-9445-B5F95FEF5424}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "WinFormsServer\SignalRServer.csproj", "{2368DFE4-48D1-482D-9445-B5F95FEF5424}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{C1260C57-E90E-4228-A107-3E3EEE175B7C}"
 EndProject

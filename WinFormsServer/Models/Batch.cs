@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 
-namespace SignalRChat.Models
+namespace SignalRServer.Models
 {
     public class BatchContext : DbContext
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 
-namespace SignalRChat.Hubs
+namespace SignalRServer.Hubs
 {
     /// <summary>
     /// Echoes messages sent using the Send message by calling the

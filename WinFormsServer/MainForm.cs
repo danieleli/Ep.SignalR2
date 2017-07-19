@@ -1,11 +1,11 @@
-﻿using Microsoft.Owin.Hosting;
-using System;
+﻿using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
+using Microsoft.Owin.Hosting;
 
-namespace SignalRChat
+namespace SignalRServer
 {
     /// <summary>
     /// WinForms host for a SignalR server. The host can stop and start the SignalR

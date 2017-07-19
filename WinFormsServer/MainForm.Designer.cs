@@ -1,4 +1,4 @@
-﻿namespace SignalRChat
+﻿namespace SignalRServer
 {
     partial class MainForm
     {

@@ -2,7 +2,7 @@
 using Microsoft.Owin.Cors;
 using Owin;
 
-namespace SignalRChat
+namespace SignalRServer
 {
     /// <summary>
     /// Used by OWIN's startup process. 
