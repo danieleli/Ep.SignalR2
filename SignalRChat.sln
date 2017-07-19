@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "WinFormsServer\SignalRServer.csproj", "{2368DFE4-48D1-482D-9445-B5F95FEF5424}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{C1260C57-E90E-4228-A107-3E3EEE175B7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollClient", "PayrollClient\PayrollClient.csproj", "{B55F0A42-093E-433B-B6BB-3E03D1AF180D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollBatchProcessor", "PayrollBatchProcessor\PayrollBatchProcessor.csproj", "{43A91226-9BA6-4765-962A-86CB1AEDE514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsServer._Test", "WinFormsServer._Test\WinFormsServer._Test.csproj", "{1668778B-417F-44AF-91A4-B2199DACCFAF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi._Test", "WebApi._Test\WebApi._Test.csproj", "{4A3A2DF8-C212-4B44-B867-E641C1607BD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "SignalRServer\SignalRServer.csproj", "{2368DFE4-48D1-482D-9445-B5F95FEF5424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer._Test", "SignalRServer._Test\SignalRServer._Test.csproj", "{1668778B-417F-44AF-91A4-B2199DACCFAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C1260C57-E90E-4228-A107-3E3EEE175B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C1260C57-E90E-4228-A107-3E3EEE175B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1260C57-E90E-4228-A107-3E3EEE175B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,14 +33,18 @@ Global
 		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43A91226-9BA6-4765-962A-86CB1AEDE514}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -69,14 +69,6 @@ namespace SignalRServer
             //RichTextBoxConsole.AppendText(message + Environment.NewLine);
         }
 
-        private void WinFormsServer_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            
-            if (_signalR != null)
-            {
-                _signalR.Dispose();
-            }
-        }
 
         private static readonly ILog _log = LogManager.GetLogger(typeof(MainForm));
     }

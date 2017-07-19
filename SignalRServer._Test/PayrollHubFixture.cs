@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using log4net;
 using Microsoft.AspNet.SignalR.Client;
 using NUnit.Framework;
 
-namespace WinFormsServer._Test
+namespace SignalRServer._Test
 {
     [TestFixture]
     public class PayrollHubFixture

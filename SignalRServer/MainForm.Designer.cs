@@ -36,7 +36,7 @@
             // ButtonStart
             // 
             this.ButtonStart.Location = new System.Drawing.Point(17, 16);
-            this.ButtonStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonStart.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStart.Name = "ButtonStart";
             this.ButtonStart.Size = new System.Drawing.Size(147, 28);
             this.ButtonStart.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.ButtonStop.Enabled = false;
             this.ButtonStop.Location = new System.Drawing.Point(273, 16);
-            this.ButtonStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonStop.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonStop.Name = "ButtonStop";
             this.ButtonStop.Size = new System.Drawing.Size(147, 28);
             this.ButtonStop.TabIndex = 0;
@@ -59,7 +59,7 @@
             // RichTextBoxConsole
             // 
             this.RichTextBoxConsole.Location = new System.Drawing.Point(17, 52);
-            this.RichTextBoxConsole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RichTextBoxConsole.Margin = new System.Windows.Forms.Padding(4);
             this.RichTextBoxConsole.Name = "RichTextBoxConsole";
             this.RichTextBoxConsole.ReadOnly = true;
             this.RichTextBoxConsole.Size = new System.Drawing.Size(401, 277);
@@ -75,11 +75,10 @@
             this.Controls.Add(this.ButtonStop);
             this.Controls.Add(this.ButtonStart);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "SignalR Server";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WinFormsServer_FormClosing);
             this.ResumeLayout(false);
 
         }
