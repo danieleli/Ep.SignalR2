@@ -42,7 +42,7 @@ namespace PayrollBatchProcessor.DataServices
 
         public void UpdateBatchStatus(int id, string status)
         {
-            _hubProxy.Invoke("UpdatePayrollBatchStatus", id, status);
+            _hubProxy.Invoke("batchUpdated", id, status);
         }
 
         private void InitializeConnection()

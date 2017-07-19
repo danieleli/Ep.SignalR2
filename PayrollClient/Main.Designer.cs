@@ -32,11 +32,11 @@
             this.ButtonGetBatches = new System.Windows.Forms.Button();
             this.ButtonSubmitBatch = new System.Windows.Forms.Button();
             this.DataGridPayrollBatches = new System.Windows.Forms.DataGridView();
-            this.payrollBatchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.payrollBatchIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.batchDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payrollBatchBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridPayrollBatches)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollBatchBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@
             // ButtonGetBatches
             // 
             this.ButtonGetBatches.Location = new System.Drawing.Point(34, 26);
-            this.ButtonGetBatches.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonGetBatches.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonGetBatches.Name = "ButtonGetBatches";
             this.ButtonGetBatches.Size = new System.Drawing.Size(149, 40);
             this.ButtonGetBatches.TabIndex = 0;
@@ -55,7 +55,7 @@
             // ButtonSubmitBatch
             // 
             this.ButtonSubmitBatch.Location = new System.Drawing.Point(209, 26);
-            this.ButtonSubmitBatch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ButtonSubmitBatch.Margin = new System.Windows.Forms.Padding(2);
             this.ButtonSubmitBatch.Name = "ButtonSubmitBatch";
             this.ButtonSubmitBatch.Size = new System.Drawing.Size(149, 40);
             this.ButtonSubmitBatch.TabIndex = 2;
@@ -83,10 +83,6 @@
             this.DataGridPayrollBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridPayrollBatches.Size = new System.Drawing.Size(522, 182);
             this.DataGridPayrollBatches.TabIndex = 3;
-            // 
-            // payrollBatchBindingSource
-            // 
-            this.payrollBatchBindingSource.DataSource = typeof(PayrollClient.Models.PayrollBatch);
             // 
             // payrollBatchIdDataGridViewTextBoxColumn
             // 
@@ -116,6 +112,10 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // payrollBatchBindingSource
+            // 
+            this.payrollBatchBindingSource.DataSource = typeof(PayrollClient.Models.PayrollBatch);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -124,7 +124,7 @@
             this.Controls.Add(this.DataGridPayrollBatches);
             this.Controls.Add(this.ButtonSubmitBatch);
             this.Controls.Add(this.ButtonGetBatches);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridPayrollBatches)).EndInit();

@@ -10,6 +10,7 @@ namespace SignalRChat.Hubs
         public void BatchUpdated(int id, string status)
         {
             Program.MainForm.WriteToConsole("Batch updated: " + id + " - " + status);
+
             Clients.All.batchUpdated(id, status);
         }
         public override Task OnConnected()

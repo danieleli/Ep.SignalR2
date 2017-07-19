@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using log4net;
 using PayrollBatchProcessor.DataServices;
+using PayrollBatchProcessor.Models;
 
 namespace PayrollBatchProcessor
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private MessageHub _messageHub;
         private PayrollBatchService _dataService;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             _dataService = new PayrollBatchService();
@@ -27,28 +29,38 @@ namespace PayrollBatchProcessor
 
         private void ButtonProcessNext_Click(object sender, EventArgs e)
         {
-
             var batch = _dataService.GetNext();
             if (batch is null) return;
+            
+            UpdateBatchStatus(batch.PayrollBatchId, "Processing");
 
-
-            richTextBox1.Text += "Sending Started message";
-            _messageHub.UpdateBatchStatus(batch.PayrollBatchId, "Started");
-            richTextBox1.Text += "Updating Status\n";
-            _dataService.UpdateStatus(batch.PayrollBatchId, "Started");
-
-            richTextBox1.Text += "working\n";
+            Thread.Sleep(2000);
+            Log("Working...");
             foreach (var timecard in batch.Timecards)
             {
                 // simulate work
                 Thread.Sleep(500);
+                Log("\tWorking... timecard");
             }
 
-            richTextBox1.Text += "Updating Status to complete\n";
-            batch.Status = "Complete";
-            _dataService.Update(batch);
-            richTextBox1.Text += "Sending Complete message\n";
-            _messageHub.UpdateBatchStatus(batch.PayrollBatchId, "Complete");
+            UpdateBatchStatus(batch.PayrollBatchId, "Complete");
         }
+
+        private void UpdateBatchStatus(int id, string status)
+        {
+            Log($"WebAoi batch ({id}) Status: {status}");
+            _dataService.UpdateStatus(id, status);
+
+            Log($"SignalR batch ({id}) Status: {status}");
+            _messageHub.UpdateBatchStatus(id, status);
+        }
+
+        private void Log(string message)
+        {
+            _log.Info(message);
+            richTextBox1.Text = message + Environment.NewLine + richTextBox1.Text;
+        }
+
+        private static readonly ILog _log = LogManager.GetLogger(typeof(MainForm));
     }
 }

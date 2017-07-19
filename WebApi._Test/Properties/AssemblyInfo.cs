@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PayrollBatchProcessor")]
+[assembly: AssemblyTitle("WebApi._Test")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EP")]
-[assembly: AssemblyProduct("PayrollBatchProcessor")]
+[assembly: AssemblyProduct("WebApi._Test")]
 [assembly: AssemblyCopyright("Copyright © EP 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("43a91226-9ba6-4765-962a-86cb1aede514")]
+[assembly: Guid("4a3a2df8-c212-4b44-b867-e641c1607bd2")]
 
 // Version information for an assembly consists of the following four values:
 //

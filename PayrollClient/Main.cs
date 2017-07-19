@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PayrollClient.DataServices;
 using PayrollClient.Models;
+using PayrollClient.Notifications;
 
 namespace PayrollClient
 {
@@ -24,6 +25,17 @@ namespace PayrollClient
         {
             InitializeComponent();
             _batchService = new PayrollBatchService();
+        }
+
+        public Main(IBatchUpdatedNotifier listner):this()
+        {
+            listner.BatchUpdated += Listner_BatchUpdated;
+        }
+
+        private void Listner_BatchUpdated(object sender, BatchUpdatedEventArgs e)
+        {
+            UpdateGridItemStatus(e.BatchId, e.BatchStatus);
+            
         }
 
         private void ButtonGetBatches_Click(object sender, EventArgs e)
@@ -55,6 +67,28 @@ namespace PayrollClient
                 cell.Style.ForeColor = color;
                 cell.Style.SelectionForeColor = color;
             }
+        }
+
+
+        private void UpdateGridItemStatus(int id, string status)
+        {
+            if (this.InvokeRequired)
+            {
+                this.Invoke((Action)(() =>
+                    UpdateGridItemStatus(id, status)
+                ));
+                return;
+            }
+            var batches = (IEnumerable<PayrollBatch>)payrollBatchBindingSource.DataSource;
+            
+            foreach (var batch in batches)
+            {
+                if (batch.PayrollBatchId == id)
+                {
+                    batch.Status = status;
+                }
+            }
+            DataGridPayrollBatches.Refresh();
         }
     }
 }

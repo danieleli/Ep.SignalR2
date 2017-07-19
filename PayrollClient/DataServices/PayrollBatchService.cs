@@ -54,12 +54,7 @@ namespace PayrollClient.DataServices
 
         public void SubmitBatch(int id)
         {
-            var response = _client.PostAsJsonAsync($"ProcessPayroll/UpdateStatus/{id}?status=Submitted", id).Result;
-            if (response.IsSuccessStatusCode)
-            {
-                return;
-            }
-            throw new ApplicationException(response.ReasonPhrase);
+          UpdateStatus(id, "Submitted");
         }
 
 

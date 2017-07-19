@@ -65,7 +65,8 @@ namespace SignalRChat
                 return;
             }
             _log.Info(message);
-            RichTextBoxConsole.AppendText(message + Environment.NewLine);
+            RichTextBoxConsole.Text = message + Environment.NewLine + RichTextBoxConsole.Text;
+            //RichTextBoxConsole.AppendText(message + Environment.NewLine);
         }
 
         private void WinFormsServer_FormClosing(object sender, FormClosingEventArgs e)
