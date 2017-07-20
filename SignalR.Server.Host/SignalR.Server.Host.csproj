@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5CD3EF99-E44E-45E8-9393-A088BD7571E3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>SignalRServer.Host</RootNamespace>
-    <AssemblyName>SignalRServer.Host</AssemblyName>
+    <RootNamespace>SignalR.Server.Host</RootNamespace>
+    <AssemblyName>SignalR.Server.Host</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -100,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -116,9 +117,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SignalR.Hubs\SignalR.Hubs.csproj">
+    <ProjectReference Include="..\SignalR.Server.Hubs\SignalR.Server.Hubs.csproj">
       <Project>{08a7fc0d-84a6-41f9-b278-6cd9d57bcd86}</Project>
-      <Name>SignalR.Hubs</Name>
+      <Name>SignalR.Server.Hubs</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

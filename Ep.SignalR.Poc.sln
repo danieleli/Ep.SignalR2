@@ -11,13 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollBatchProcessor", "Pa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi._Test", "WebApi._Test\WebApi._Test.csproj", "{4A3A2DF8-C212-4B44-B867-E641C1607BD2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer", "SignalRServer\SignalRServer.csproj", "{2368DFE4-48D1-482D-9445-B5F95FEF5424}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Server.Hubs", "SignalR.Server.Hubs\SignalR.Server.Hubs.csproj", "{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer._Test", "SignalRServer._Test\SignalRServer._Test.csproj", "{1668778B-417F-44AF-91A4-B2199DACCFAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Server.Host", "SignalR.Server.Host\SignalR.Server.Host.csproj", "{5CD3EF99-E44E-45E8-9393-A088BD7571E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalRServer.Host", "SignalRServer.Host\SignalRServer.Host.csproj", "{5CD3EF99-E44E-45E8-9393-A088BD7571E3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Hubs", "SignalR.Hubs\SignalR.Hubs.csproj", "{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Client._Test", "SignalR.Client._Test\SignalR.Client._Test.csproj", "{1668778B-417F-44AF-91A4-B2199DACCFAF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,22 +39,18 @@ Global
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A3A2DF8-C212-4B44-B867-E641C1607BD2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2368DFE4-48D1-482D-9445-B5F95FEF5424}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD3EF99-E44E-45E8-9393-A088BD7571E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1668778B-417F-44AF-91A4-B2199DACCFAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

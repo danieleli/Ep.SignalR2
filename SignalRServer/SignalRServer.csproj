@@ -86,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hubs\PayrollHub.cs" />
-    <Compile Include="Models\Batch.cs" />
     <Compile Include="Hubs\MyHub.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="MainForm.cs">

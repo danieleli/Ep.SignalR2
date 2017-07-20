@@ -4,7 +4,7 @@ using log4net;
 using Microsoft.AspNet.SignalR.Client;
 using NUnit.Framework;
 
-namespace SignalRServer._Test
+namespace SignalR.Client._Test
 {
     [TestFixture]
     public class PayrollHubFixture

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using log4net;
 using Microsoft.Owin.Hosting;
 
-namespace SignalRServer.Host
+namespace SignalR.Server.Host
 {
     public partial class MainForm : Form
     {

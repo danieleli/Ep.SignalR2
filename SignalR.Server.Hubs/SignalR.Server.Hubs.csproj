@@ -7,8 +7,8 @@
     <ProjectGuid>{08A7FC0D-84A6-41F9-B278-6CD9D57BCD86}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SignalR.Hubs</RootNamespace>
-    <AssemblyName>SignalR.Hubs</AssemblyName>
+    <RootNamespace>SignalR.Server.Hubs</RootNamespace>
+    <AssemblyName>SignalR.Server.Hubs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

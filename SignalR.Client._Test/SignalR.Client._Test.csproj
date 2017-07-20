@@ -7,8 +7,8 @@
     <ProjectGuid>{1668778B-417F-44AF-91A4-B2199DACCFAF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SignalRServer._Test</RootNamespace>
-    <AssemblyName>SignalRServer._Test</AssemblyName>
+    <RootNamespace>SignalR.Client._Test</RootNamespace>
+    <AssemblyName>SignalR.Client._Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

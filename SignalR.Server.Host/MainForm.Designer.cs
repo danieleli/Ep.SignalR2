@@ -1,4 +1,4 @@
-﻿namespace SignalRServer.Host
+namespace SignalR.Server.Host
 {
     partial class MainForm
     {
@@ -72,7 +72,7 @@
             this.Controls.Add(this.StopButton);
             this.Controls.Add(this.StartButton);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "MainForm";
             this.ResumeLayout(false);
 
         }
