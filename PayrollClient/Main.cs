@@ -33,8 +33,8 @@ namespace PayrollClient
             var response =  _client.GetAsync("api/PayrollBatches").Result;
             if (response.IsSuccessStatusCode)
             {
-                Listdynamic> rtn  =  response.Content.ReadAsAsync<object>().Result;
-                Console.WriteLine(rtn);
+               // List<object> rtn  =  response.Content.ReadAsAsync<object>().Result;
+                //Console.WriteLine(rtn);
             }
         }
 

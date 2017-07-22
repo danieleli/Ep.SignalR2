@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsClient", "WindowsFormsClient\WinFormsClient.csproj", "{8B8BEBD1-A182-450D-B4EF-DE2E4820D4F8}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{C1260C57-E90E-4228-A107-3E3EEE175B7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollClient", "PayrollClient\PayrollClient.csproj", "{B55F0A42-093E-433B-B6BB-3E03D1AF180D}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Payroll.Database", "Payroll.Database\Payroll.Database.sqlproj", "{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,12 @@ Global
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B55F0A42-093E-433B-B6BB-3E03D1AF180D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E5BBBF-C2F6-4B3E-A37B-FE2D53AD0AA8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
