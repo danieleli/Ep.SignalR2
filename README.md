@@ -4,9 +4,8 @@ documentation TBD
 
 Todo:
 ------
-* Should all notification originate from WebApi
-  * Start processing? should this call webApi to lock records?  Lock timeout?
+* Should all notification originate from WebApi or Webservice - yes
 * Connect to dev db
 * Where to deploy SignalR server - Self host or AspNet
-* Authentication
+* SignalR Authentication
 * what data to pass in messages?  what is available from context?
