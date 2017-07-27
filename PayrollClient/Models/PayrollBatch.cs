@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace PayrollClient.Models
 {
@@ -10,7 +9,7 @@ namespace PayrollClient.Models
             Timecards = new List<Timecard>();
         }
         public int PayrollBatchId { get; set; }
-        [Timestamp]
+        
         public byte[] RowVersion { get; set; }
         
         public string UserName { get; set; }

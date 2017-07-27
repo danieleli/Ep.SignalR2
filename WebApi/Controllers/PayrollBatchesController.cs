@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
@@ -18,13 +15,13 @@ namespace WebApi.Controllers
     {
         private PayrollContext db = new PayrollContext();
 
-        // GET: api/PayrollBatches1
+        // GET: api/PayrollBatches
         public IList<PayrollBatch> GetPayrollBatches()
         {
             return db.PayrollBatches.ToList();
         }
 
-        // GET: api/PayrollBatches1/5
+        // GET: api/PayrollBatches/5
         [ResponseType(typeof(PayrollBatch))]
         public async Task<IHttpActionResult> GetPayrollBatch(int id)
         {
@@ -37,7 +34,7 @@ namespace WebApi.Controllers
             return Ok(payrollBatch);
         }
 
-        // PUT: api/PayrollBatches1/5
+        // PUT: api/PayrollBatches/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutPayrollBatch(int id, PayrollBatch payrollBatch)
         {
@@ -72,7 +69,7 @@ namespace WebApi.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/PayrollBatches1
+        // POST: api/PayrollBatches
         [ResponseType(typeof(PayrollBatch))]
         public async Task<IHttpActionResult> PostPayrollBatch(PayrollBatch payrollBatch)
         {
@@ -87,7 +84,7 @@ namespace WebApi.Controllers
             return CreatedAtRoute("DefaultApi", new { id = payrollBatch.PayrollBatchId }, payrollBatch);
         }
 
-        // DELETE: api/PayrollBatches1/5
+        // DELETE: api/PayrollBatches/5
         [ResponseType(typeof(PayrollBatch))]
         public async Task<IHttpActionResult> DeletePayrollBatch(int id)
         {
