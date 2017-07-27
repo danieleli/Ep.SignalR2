@@ -17,6 +17,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Server.Host", "Sign
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Client._Test", "SignalR.Client._Test\SignalR.Client._Test.csproj", "{1668778B-417F-44AF-91A4-B2199DACCFAF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D311A53-030C-4350-BB61-07348E976C53}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Server.Host._Test", "SignalR.Server.Host._Test\SignalR.Server.Host._Test.csproj", "{7F932258-9951-4481-BB37-9B3F8A4DF3B8}"
 EndProject
 Global
