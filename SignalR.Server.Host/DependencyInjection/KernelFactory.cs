@@ -1,7 +1,7 @@
 using Ninject;
 using SignalR.Server.Hubs;
 
-namespace SignalR.Server.Host
+namespace SignalR.Server.Host.DependencyInjection
 {
     public class KernelFactory
     {

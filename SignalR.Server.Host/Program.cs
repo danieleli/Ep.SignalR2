@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Ninject;
+using SignalR.Server.Host.DependencyInjection;
 
 namespace SignalR.Server.Host
 {

@@ -5,6 +5,7 @@ using Microsoft.Owin.BuilderProperties;
 using Microsoft.Owin.Cors;
 using Ninject;
 using Owin;
+using SignalR.Server.Host.DependencyInjection;
 using SignalR.Server.Hubs;
 
 namespace SignalR.Server.Host

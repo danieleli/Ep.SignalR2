@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNet.SignalR;
 using Ninject;
 
-namespace SignalR.Server.Host
+namespace SignalR.Server.Host.DependencyInjection
 {
     internal class NinjectSignalRDependencyResolver : DefaultDependencyResolver
     {
