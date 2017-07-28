@@ -1,6 +1,6 @@
 ﻿namespace PayrollClient
 {
-    partial class MainForm
+    partial class BatchesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,59 +29,52 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ButtonGetBatches = new System.Windows.Forms.Button();
-            this.ButtonSubmitBatch = new System.Windows.Forms.Button();
-            this.DataGridPayrollBatches = new System.Windows.Forms.DataGridView();
+            this.BatchesGrid = new System.Windows.Forms.DataGridView();
+            this.payrollBatchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.batchDetailTabs = new System.Windows.Forms.TabControl();
             this.payrollBatchIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.batchDescDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.payrollBatchBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridPayrollBatches)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BatchesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollBatchBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // ButtonGetBatches
+            // BatchesGrid
             // 
-            this.ButtonGetBatches.Location = new System.Drawing.Point(51, 41);
-            this.ButtonGetBatches.Name = "ButtonGetBatches";
-            this.ButtonGetBatches.Size = new System.Drawing.Size(224, 62);
-            this.ButtonGetBatches.TabIndex = 0;
-            this.ButtonGetBatches.Text = "Get Batches";
-            this.ButtonGetBatches.UseVisualStyleBackColor = true;
-            this.ButtonGetBatches.Click += new System.EventHandler(this.ButtonGetBatches_Click);
-            // 
-            // ButtonSubmitBatch
-            // 
-            this.ButtonSubmitBatch.Location = new System.Drawing.Point(314, 41);
-            this.ButtonSubmitBatch.Name = "ButtonSubmitBatch";
-            this.ButtonSubmitBatch.Size = new System.Drawing.Size(224, 62);
-            this.ButtonSubmitBatch.TabIndex = 2;
-            this.ButtonSubmitBatch.Text = "Submit Batch";
-            this.ButtonSubmitBatch.UseVisualStyleBackColor = true;
-            this.ButtonSubmitBatch.Click += new System.EventHandler(this.ButtonSubmitBatch_Click);
-            // 
-            // DataGridPayrollBatches
-            // 
-            this.DataGridPayrollBatches.AllowUserToAddRows = false;
-            this.DataGridPayrollBatches.AllowUserToDeleteRows = false;
-            this.DataGridPayrollBatches.AutoGenerateColumns = false;
-            this.DataGridPayrollBatches.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridPayrollBatches.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.BatchesGrid.AllowUserToAddRows = false;
+            this.BatchesGrid.AllowUserToDeleteRows = false;
+            this.BatchesGrid.AutoGenerateColumns = false;
+            this.BatchesGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.BatchesGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.payrollBatchIdDataGridViewTextBoxColumn,
             this.userNameDataGridViewTextBoxColumn,
             this.batchDescDataGridViewTextBoxColumn,
             this.statusDataGridViewTextBoxColumn});
-            this.DataGridPayrollBatches.DataSource = this.payrollBatchBindingSource;
-            this.DataGridPayrollBatches.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DataGridPayrollBatches.Location = new System.Drawing.Point(0, 526);
-            this.DataGridPayrollBatches.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DataGridPayrollBatches.Name = "DataGridPayrollBatches";
-            this.DataGridPayrollBatches.ReadOnly = true;
-            this.DataGridPayrollBatches.RowTemplate.Height = 24;
-            this.DataGridPayrollBatches.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DataGridPayrollBatches.Size = new System.Drawing.Size(1239, 284);
-            this.DataGridPayrollBatches.TabIndex = 3;
+            this.BatchesGrid.DataSource = this.payrollBatchBindingSource;
+            this.BatchesGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BatchesGrid.Location = new System.Drawing.Point(0, 0);
+            this.BatchesGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.BatchesGrid.Name = "BatchesGrid";
+            this.BatchesGrid.ReadOnly = true;
+            this.BatchesGrid.RowTemplate.Height = 33;
+            this.BatchesGrid.Size = new System.Drawing.Size(1000, 277);
+            this.BatchesGrid.TabIndex = 1;
+            this.BatchesGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.BatchesGrid_CellContentClick);
+            // 
+            // payrollBatchBindingSource
+            // 
+            this.payrollBatchBindingSource.DataSource = typeof(PayrollClient.Models.PayrollBatch);
+            // 
+            // batchDetailTabs
+            // 
+            this.batchDetailTabs.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.batchDetailTabs.Location = new System.Drawing.Point(0, 277);
+            this.batchDetailTabs.Margin = new System.Windows.Forms.Padding(2);
+            this.batchDetailTabs.Name = "batchDetailTabs";
+            this.batchDetailTabs.SelectedIndex = 0;
+            this.batchDetailTabs.Size = new System.Drawing.Size(1000, 457);
+            this.batchDetailTabs.TabIndex = 0;
             // 
             // payrollBatchIdDataGridViewTextBoxColumn
             // 
@@ -89,6 +82,7 @@
             this.payrollBatchIdDataGridViewTextBoxColumn.HeaderText = "PayrollBatchId";
             this.payrollBatchIdDataGridViewTextBoxColumn.Name = "payrollBatchIdDataGridViewTextBoxColumn";
             this.payrollBatchIdDataGridViewTextBoxColumn.ReadOnly = true;
+            this.payrollBatchIdDataGridViewTextBoxColumn.Width = 200;
             // 
             // userNameDataGridViewTextBoxColumn
             // 
@@ -96,6 +90,7 @@
             this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
             this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
             this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.userNameDataGridViewTextBoxColumn.Width = 120;
             // 
             // batchDescDataGridViewTextBoxColumn
             // 
@@ -103,6 +98,7 @@
             this.batchDescDataGridViewTextBoxColumn.HeaderText = "BatchDesc";
             this.batchDescDataGridViewTextBoxColumn.Name = "batchDescDataGridViewTextBoxColumn";
             this.batchDescDataGridViewTextBoxColumn.ReadOnly = true;
+            this.batchDescDataGridViewTextBoxColumn.Width = 300;
             // 
             // statusDataGridViewTextBoxColumn
             // 
@@ -111,36 +107,30 @@
             this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
             this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // payrollBatchBindingSource
+            // BatchesForm
             // 
-            this.payrollBatchBindingSource.DataSource = typeof(PayrollClient.Models.PayrollBatch);
-            // 
-            // MainForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 810);
-            this.Controls.Add(this.DataGridPayrollBatches);
-            this.Controls.Add(this.ButtonSubmitBatch);
-            this.Controls.Add(this.ButtonGetBatches);
-            this.Name = "MainForm";
-            this.Text = "Main";
-            ((System.ComponentModel.ISupportInitialize)(this.DataGridPayrollBatches)).EndInit();
+            this.ClientSize = new System.Drawing.Size(1000, 734);
+            this.Controls.Add(this.BatchesGrid);
+            this.Controls.Add(this.batchDetailTabs);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "BatchesForm";
+            this.Text = "BatchesForm";
+            this.Load += new System.EventHandler(this.BatchesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.BatchesGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollBatchBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ButtonGetBatches;
-        private System.Windows.Forms.Button ButtonSubmitBatch;
-        private System.Windows.Forms.DataGridView DataGridPayrollBatches;
+        private System.Windows.Forms.DataGridView BatchesGrid;
         private System.Windows.Forms.BindingSource payrollBatchBindingSource;
+        private System.Windows.Forms.TabControl batchDetailTabs;
         private System.Windows.Forms.DataGridViewTextBoxColumn payrollBatchIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn batchDescDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
     }
 }
-

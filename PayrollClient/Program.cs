@@ -21,9 +21,9 @@ namespace PayrollClient
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            var k = KernelFactory.GetKernel();
-            var mainForm = k.Get<MainForm>();
-            Application.Run(mainForm);
+            //var k = KernelFactory.GetKernel();
+            //var mainForm = k.Get<MainForm>();
+            Application.Run(new BatchesForm());
         }
     }
 }
