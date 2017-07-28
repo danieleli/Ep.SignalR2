@@ -16,30 +16,25 @@ namespace SignalR.Server.Host
     {
         public void Configuration(IAppBuilder app)
         {
-            var kernel = KernelFactory.GetKernel();
-            
-            Log.Debug("Configuring SignalR");
             app.UseCors(CorsOptions.AllowAll);
 
-            var config = GetSignalRConfig(kernel);
+            var config = GetConfig();
+
             app.MapSignalR(config);
         }
 
-
-
-        private static HubConfiguration GetSignalRConfig(StandardKernel kernel)
+        private static HubConfiguration GetConfig()
         {
+            var kernel = KernelFactory.GetKernel();
             var resolver = new NinjectSignalRDependencyResolver(kernel);
-
             var config = new HubConfiguration()
             {
                 Resolver = resolver
             };
+
             return config;
         }
 
-
-  
 
         private static readonly ILog Log = LogManager.GetLogger(typeof(Startup));
 

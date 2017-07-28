@@ -17,18 +17,18 @@ using PayrollClient.Notifications;
 
 namespace PayrollClient
 {
-    public partial class Main : Form
+    public partial class MainForm : Form
     {
-        private readonly PayrollBatchService _batchService;
+        private readonly IPayrollBatchService _batchService;
 
-        public Main()
+        public MainForm()
         {
             InitializeComponent();
-            _batchService = new PayrollBatchService();
         }
 
-        public Main(IBatchUpdatedNotifier listner):this()
+        public MainForm(IBatchUpdatedNotifier listner, IPayrollBatchService batchService) :this()
         {
+            _batchService = batchService;
             listner.BatchUpdated += Listner_BatchUpdated;
         }
 

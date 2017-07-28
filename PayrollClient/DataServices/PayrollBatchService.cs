@@ -6,9 +6,17 @@ using PayrollClient.Models;
 
 namespace PayrollClient.DataServices
 {
-    public class PayrollBatchService
+    public interface IPayrollBatchService
+    {
+        IList<PayrollBatch> GetBatches();
+        void UpdateStatus(int id, string status);
+        void SubmitBatch(int id);
+    }
+
+    public class PayrollBatchService : IPayrollBatchService
     {
         private static HttpClient _client = null;
+
         public PayrollBatchService()
         {
             if (_client == null)

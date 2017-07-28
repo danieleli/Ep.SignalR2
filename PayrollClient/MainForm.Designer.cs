@@ -1,6 +1,6 @@
 ﻿namespace PayrollClient
 {
-    partial class Main
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -125,7 +125,7 @@
             this.Controls.Add(this.ButtonSubmitBatch);
             this.Controls.Add(this.ButtonGetBatches);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Main";
+            this.Name = "MainForm";
             this.Text = "Main";
             ((System.ComponentModel.ISupportInitialize)(this.DataGridPayrollBatches)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollBatchBindingSource)).EndInit();

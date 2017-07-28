@@ -20,11 +20,13 @@ namespace SignalR.Server.Hubs
             _logger.Log("Batch updated: " + id + " - " + status);
             Clients.All.batchUpdated(id, status);
         }
+
         public override Task OnConnected()
         {
             _logger.Log("Client connected: " + Context.ConnectionId);
             return base.OnConnected();
         }
+
         public override Task OnDisconnected(bool stopCalled)
         {
             _logger.Log("Client disconnected: " + Context.ConnectionId);
