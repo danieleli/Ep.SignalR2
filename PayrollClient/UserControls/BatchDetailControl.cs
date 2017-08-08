@@ -28,7 +28,7 @@ namespace PayrollClient.UserControls
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(10*1000);
+            Thread.Sleep(7*1000);
         }
 
         private void FinalizeButton_Click(object sender, EventArgs e)
