@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4A3A2DF8-C212-4B44-B867-E641C1607BD2}</ProjectGuid>
+    <ProjectGuid>{26F0617D-5DF5-4ED9-AD7F-439C064A3B13}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebApi._Test</RootNamespace>
-    <AssemblyName>WebApi._Test</AssemblyName>
+    <RootNamespace>RabbitMQ.Worker._Test</RootNamespace>
+    <AssemblyName>RabbitMQ.Worker._Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,20 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\SubmitFinalizationCommandFixture.cs" />
-    <Compile Include="TestFixture.cs" />
+    <Compile Include="PayrollBatchWorkerFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WebApi\WebApi.csproj">
-      <Project>{c1260c57-e90e-4228-a107-3e3eee175b7c}</Project>
-      <Name>WebApi</Name>
+    <ProjectReference Include="..\RabbitMQ.Worker\RabbitMQ.Worker.csproj">
+      <Project>{7c3fc18a-e6e8-4029-8721-8a72cee75086}</Project>
+      <Name>RabbitMQ.Worker</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
