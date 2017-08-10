@@ -15,11 +15,29 @@ namespace WebApi._Test.Commands
         public void Send()
         {
             // arrange
-            var batchId = 5;
+            var batchId = 6;
             var cmd = new SubmitFinalizationCommand();
 
             // act
             cmd.Submit(batchId);
+
+            // assert
+        }
+
+        [Test]
+        public void SendMany()
+        {
+            // arrange
+            
+            var cmd = new SubmitFinalizationCommand();
+
+            // act
+            for (int i = 0; i < 12; i++)
+            {
+                var batchId = i;
+                cmd.Submit(batchId);
+            }
+            
 
             // assert
         }

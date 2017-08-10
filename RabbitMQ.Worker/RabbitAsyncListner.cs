@@ -30,6 +30,7 @@ public class RabbitAsyncListner : IDisposable
 
     public void Start()
     {
+        _log.Debug("Starting main thread.");
         var t = new Task(() => this.Initialize());
         t.Start();
     }
@@ -43,7 +44,7 @@ public class RabbitAsyncListner : IDisposable
         _channel = CreateChannel(_connection, QUEUE_NAME);
         _consumer = new EventingBasicConsumer(_channel);
         _consumer.Received += ConsumerOnReceived;
-        _channel.BasicConsume(queue: QUEUE_NAME, autoAck: true, consumer: _consumer);
+        _channel.BasicConsume(queue: QUEUE_NAME, autoAck: false, consumer: _consumer);
 
         SetStatus(WorkerStatus.Started); 
     }
@@ -58,6 +59,7 @@ public class RabbitAsyncListner : IDisposable
 
                 _channel.Close();
                 _consumer.Received -= ConsumerOnReceived;
+                _connection.Close();
 
                 SetStatus(WorkerStatus.Stopped);
             }
@@ -107,8 +109,17 @@ public class RabbitAsyncListner : IDisposable
             if (disposing)
             {
                 _log.Debug("Disposing");
-                _channel.Dispose();
-                _connection.Dispose();
+                try
+                {
+                    this.Stop();
+                }
+                catch
+                {
+                    // no action in dispose
+                }
+
+                if(_channel != null) _channel.Dispose();
+                if(_connection != null) _connection.Dispose();
             }
 
             isDisposed = true;
